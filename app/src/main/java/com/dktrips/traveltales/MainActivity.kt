@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.dktrips.traveltales.ui.mapbox.MapFragment
 import com.dktrips.traveltales.viewmodel.AuthViewModel
 import com.dktrips.traveltales.viewmodel.MainActivityViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -20,12 +21,14 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.GoogleAuthProvider
+import com.mapbox.mapboxsdk.Mapbox
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    private val createMapFragment: Boolean = true
     private val rcSignIn = 1
     private var googleSignInClient: GoogleSignInClient? = null
     private val viewModel by lazy {
@@ -40,10 +43,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         FirebaseApp.initializeApp(this);
+        Mapbox.getInstance(this, getString(R.string.mapbox_access_token))
+
         checkUserAuthentication();
         viewModel.tripStatus.observe(this, Observer { _ ->
             Toast.makeText(applicationContext, "Status changed", Toast.LENGTH_LONG)
         })
+        if (createMapFragment) {
+            supportFragmentManager.beginTransaction().add(R.id.map_fragment_holder, MapFragment())
+                .commit()
+
+        }
     }
 
     private fun checkUserAuthentication() {
@@ -57,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
 
     private fun initSignInButton() {
         val googleSignInButton = findViewById<SignInButton>(R.id.sign_in_button)
@@ -102,7 +113,7 @@ class MainActivity : AppCompatActivity() {
     private fun signInWithGoogleAuthCredential(googleAuthCredential: AuthCredential) {
         authViewModel.signInWithGoogle(googleAuthCredential)
         authViewModel.authenticatedUserLiveData?.observe(this) { authenticatedUser ->
-            if(authenticatedUser != null) {
+            if (authenticatedUser != null) {
 
             }
 //            if (authenticatedUser.isNew) {
