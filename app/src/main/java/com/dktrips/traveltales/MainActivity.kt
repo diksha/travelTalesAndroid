@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         FirebaseApp.initializeApp(this);
         Mapbox.getInstance(this, getString(R.string.mapbox_access_token))
-
         checkUserAuthentication();
         viewModel.tripStatus.observe(this, Observer { _ ->
             Toast.makeText(applicationContext, "Status changed", Toast.LENGTH_LONG)
@@ -53,17 +52,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUserAuthentication() {
-        authViewModel.checkIfUserIsLoggedIn()
-        authViewModel.isLoggedIn.observe(this, { isLoggedIn ->
-            val fragmentTransaction = supportFragmentManager.beginTransaction()
-            supportFragmentManager.fragments.forEach {
-                fragmentTransaction.remove(it)
-            }
-            if (!isLoggedIn) {
-                fragmentTransaction.add(R.id.main_content, AuthFragment.newInstance())
-            }
-            fragmentTransaction.commit()
-        })
+//        authViewModel.checkIfUserIsLoggedIn()
+//        authViewModel.isLoggedIn.observe(this, { isLoggedIn ->
+//            val fragmentTransaction = supportFragmentManager.beginTransaction()
+//            supportFragmentManager.fragments.forEach {
+//                fragmentTransaction.remove(it)
+//            }
+//            if (!isLoggedIn) {
+//                fragmentTransaction.add(R.id.main_content, AuthFragment.newInstance())
+//            }
+//            fragmentTransaction.commit()
+//        })
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
