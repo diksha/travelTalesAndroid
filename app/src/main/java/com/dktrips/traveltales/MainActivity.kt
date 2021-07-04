@@ -7,11 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-<<<<<<< HEAD
 import com.dktrips.traveltales.ui.mapbox.MapFragment
-=======
 import com.dktrips.traveltales.fragments.AuthFragment
->>>>>>> 885455ae07d018b0265c668cc3b414d739d6c15b
 import com.dktrips.traveltales.viewmodel.AuthViewModel
 import com.dktrips.traveltales.viewmodel.MainActivityViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
