@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         FirebaseApp.initializeApp(this);
-        Mapbox.getInstance(this, getString(R.string.mapbox_access_token))
         checkUserAuthentication();
         viewModel.tripStatus.observe(this, Observer { _ ->
             Toast.makeText(applicationContext, "Status changed", Toast.LENGTH_LONG)
