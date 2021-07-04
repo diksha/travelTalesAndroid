@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "680605068984",
+    "firebase_url": "https://traveltales-dfc84.firebaseio.com",
+    "project_id": "traveltales-dfc84",
+    "storage_bucket": "traveltales-dfc84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680605068984:android:d27f9343498fd029454e4d",
+        "android_client_info": {
+          "package_name": "com.dktrips.traveltales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680605068984-6bijdj2jovv2m1jcf8gmfgugp883ejn5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnnNkc73B_9CmNHboykbNtHO4SMvlDjlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680605068984-6bijdj2jovv2m1jcf8gmfgugp883ejn5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:680605068984:android:3d7c07dc6f6adb14",
+        "android_client_info": {
+          "package_name": "com.example.dikshag.traveltales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "680605068984-6bijdj2jovv2m1jcf8gmfgugp883ejn5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnnNkc73B_9CmNHboykbNtHO4SMvlDjlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "680605068984-6bijdj2jovv2m1jcf8gmfgugp883ejn5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
